@@ -16,7 +16,7 @@ describe('template spec', () => {
     cy.get('a[class="btn-primary btn-cart btn-place-order"]').click()
     cy.get('#adderess_step_submit').click()
     cy.get('#quote_submit').click()
-    cy.wait(1000)
+    cy.wait(2000)
     //ขั้นตอนที่ 2 admin approve quotation
     cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/sgadmin/login')
     cy.get('#email').type('admin@enhance.com')
@@ -26,12 +26,17 @@ describe('template spec', () => {
     cy.get('[title="B2B"] > .icon').click()
     cy.get('#quotation > [href="javascript:void(0);"]').click()
     cy.get('#quotation > ul > li > a').click()
+    cy.wait(2000)
     cy.get('#pq-body-cell-u2-0-0-right > .btn').click()
     cy.get('.float-right > .btn-primary').click()
     cy.get('.swal2-confirm').click()
     cy.get('.swal2-confirm').click()
     cy.wait(1000)
     //ขั้นตอนที่ 3 ลูกค้า approve ใบ quotation
+    cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/company/login')
+    cy.get('.login-link-btn > .user-menu > .dropdown-toggle').click()
+    cy.wait(1000)
+    cy.get('.login-link-btn > .user-menu > .dropdown-menu > [href="https://sepb2b-nnp2-dev.sepplatform.com/en/company/logout"]').click()
     cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/company/login')
     //email และ password สำหรับคน approve quotation
     cy.get('#email1').type('xeklrdf848@ncialis.online')
