@@ -7,7 +7,7 @@ describe('template spec', () => {
     cy.get('#password1').type('123456')
     cy.get('.registered > #pageloginForm > .form-group.text-center > .btn').click()
     //ลิ้ง url สินค้าที่ต้องการเทส
-    cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/product/normal-ohm/normal-ohm')
+    cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/product/normal-tier-test01/1normal-tester-1')
     cy.get('#quantity').type('{selectAll}{backspace}')
     //จำนวนสินค้าที่ต้องการเทส
     cy.get('#quantity').type('10')
@@ -44,6 +44,7 @@ describe('template spec', () => {
     cy.get('.registered > #pageloginForm > .form-group.text-center > .btn').click()
     cy.get(':nth-child(4) > :nth-child(3) > a').click()
     cy.get(':nth-child(1) > :nth-child(7) > .info-wraps > .mb-3 > .btn').click()
+    //ต่อรองราคา
     cy.get('.DTFC_LeftBodyLiner > .table > .cart-item-container > .cart-item-list > .raio-first-col > :nth-child(1) > .radio-ok').click()
     cy.get('#changeStatus').click()
     cy.get('.swal2-confirm').click()
