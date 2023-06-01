@@ -21,7 +21,7 @@ describe('template spec', () => {
     cy.get(':nth-child(4) > .box-content > :nth-child(5) > :nth-child(1) > input').type(random.number(2))
     //วันเกิด
     cy.get('.box-content > :nth-child(5) > :nth-child(2) > .flatpicker').click()
-    cy.get('.arrowTop > .flatpickr-innerContainer > .flatpickr-rContainer > .flatpickr-days > .dayContainer > [aria-label="May 8, 2023"]').click()
+    cy.get('.open > .flatpickr-innerContainer > .flatpickr-rContainer > .flatpickr-days > .dayContainer > .today').click()
     //เลขที่อยู่
     cy.get(':nth-child(6) > :nth-child(1) > input').type('111/111')
     //จังหวัด
@@ -45,7 +45,7 @@ describe('template spec', () => {
     //ไอดีไลน์
     cy.get(':nth-child(9) > :nth-child(2) > input').type('@line')
     //อีเมล
-    cy.get('#inlineFormInputGroup').type('email@email')
+    cy.get('#inlineFormInputGroup').type('112@112')
     //Doctor/Dentist License
     cy.get('.box-content > :nth-child(1) > .col-md-6 > input').type(random.number(13))
     cy.get('.add-wrap > .col-md-12 > input').type('doctor')
