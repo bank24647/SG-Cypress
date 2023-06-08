@@ -3,14 +3,14 @@ describe('template spec', () => {
     //ขั้นตอนที่ 1 เพิ่มสินค้าใส่ตะกร้าเพื่อสร้างใบ quotation
     cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/company/login')
     //email และ password สำหรับคนสร้างใบ quotation
-    cy.get('#email1').type('wanit.dan.it57@cpc.ac.th')
+    cy.get('#email1').type('fiwetos914@vaband.com')
     cy.get('#password1').type('123456')
     cy.get('.registered > #pageloginForm > .form-group.text-center > .btn').click()
     //ลิ้ง url สินค้าที่ต้องการเทส
     cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/product/normal-tier-test01/1normal-tester-1')
     cy.get('#quantity').type('{selectAll}{backspace}')
     //จำนวนสินค้าที่ต้องการเทส
-    cy.get('#quantity').type('10')
+    cy.get('#quantity').type('3')
     cy.get('#addToCart').click()
     cy.get('.widthfit_contents > :nth-child(3) > .btn-primary').click()
     cy.get('a[class="btn-primary btn-cart btn-place-order"]').click()
@@ -32,23 +32,24 @@ describe('template spec', () => {
     cy.get('.swal2-confirm').click()
     cy.get('.swal2-confirm').click()
     cy.wait(1000)
-    //ขั้นตอนที่ 3 ลูกค้า approve ใบ quotation
-    cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/company/login')
-    cy.get('.login-link-btn > .user-menu > .dropdown-toggle').click()
-    cy.wait(1000)
-    cy.get('.login-link-btn > .user-menu > .dropdown-menu > [href="https://sepb2b-nnp2-dev.sepplatform.com/en/company/logout"]').click()
-    cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/company/login')
-    //email และ password สำหรับคน approve quotation
-    cy.get('#email1').type('xeklrdf848@ncialis.online')
-    cy.get('#password1').type('123456')
-    cy.get('.registered > #pageloginForm > .form-group.text-center > .btn').click()
-    cy.get(':nth-child(4) > :nth-child(3) > a').click()
-    cy.get(':nth-child(1) > :nth-child(7) > .info-wraps > .mb-3 > .btn').click()
-    //ต่อรองราคา
-    cy.get('.DTFC_LeftBodyLiner > .table > .cart-item-container > .cart-item-list > .raio-first-col > :nth-child(1) > .radio-ok').click()
-    cy.get('#changeStatus').click()
-    cy.get('.swal2-confirm').click()
-    cy.get('.swal2-confirm').click()
-    // automate จบที่ขั้นตอนต่อรองราคาเสร็จแล้วและกำลังรอ approve
+    // //ขั้นตอนที่ 3 ลูกค้า approve ใบ quotation
+    // cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/company/login')
+    // cy.get('.login-link-btn > .user-menu > .dropdown-toggle').click()
+    // cy.wait(1000)
+    // cy.get('.login-link-btn > .user-menu > .dropdown-menu > [href="https://sepb2b-nnp2-dev.sepplatform.com/en/company/logout"]').click()
+    // cy.visit('https://sepb2b-nnp2-dev.sepplatform.com/en/company/login')
+    // cy.wait(2000)
+    // //email และ password สำหรับคน approve quotation
+    // cy.get('#email1').type('fiwetos914@vaband.com')
+    // cy.get('#password1').type('123456')
+    // cy.get('.registered > #pageloginForm > .form-group.text-center > .btn').click()
+    // cy.get(':nth-child(4) > :nth-child(3) > a').click()
+    // cy.get(':nth-child(1) > :nth-child(7) > .info-wraps > .mb-3 > .btn').click()
+    // //ต่อรองราคา
+    // cy.get('.DTFC_LeftBodyLiner > .table > .cart-item-container > .cart-item-list > .raio-first-col > :nth-child(1) > .radio-ok').click()
+    // cy.get('#changeStatus').click()
+    // cy.get('.swal2-confirm').click()
+    // cy.get('.swal2-confirm').click()
+    // // automate จบที่ขั้นตอนต่อรองราคาเสร็จแล้วและกำลังรอ approve
   })
 })
