@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  numTestsKeptInMemory : 10,
+  numTestsKeptInMemory : 1,
   experimentalMemoryManagement : true,
   e2e: {
     setupNodeEvents(on, config) {
