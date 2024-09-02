@@ -1,0 +1,1 @@
+import * as random from '../random.js';
